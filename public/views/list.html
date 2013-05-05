@@ -2,10 +2,10 @@
   <h1>{{posts[0].user.login}}'s blog!</h1>
   <ul class="unstyled">
     <li ng-repeat="post in posts">
-      <h3 ng-repeat="file in post.files">{{file.filename}}</h3>  
+      <h3 ng-repeat="file in post.files"><a href="" ng-click="readPost({{post.id}})" >{{file.filename}}</a></h3>  
       <p>{{post.created_at}}</p>  
       <p>{{post.description}}</p>
-      <p><a href="" ng-click="readPost({{post.id}})">Read More</a></p>
+      <!-- <p><a class="btn" href="" ng-click="readPost({{post.id}})">Read More</a></p> -->
     </li>
   </ul>
 </section>

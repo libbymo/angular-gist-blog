@@ -25,8 +25,6 @@ GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http, $
 	// This will have to be a jsonp call to display the 
 	// details of the post in html, so good luck with that.
 	
-	console.log("in postctrl")
-
 	// var url = 'https://api.github.com/gists/' + $routeParams.id;  //5518980
 	
 	// $resource( url,
