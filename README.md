@@ -5,5 +5,5 @@ Display a list of Gists, that are essentially blog posts. From that list, click 
 
 Doing this in a single page Angular app.
 
-npm install
-node app.js
+1. npm install
+2. node app.js

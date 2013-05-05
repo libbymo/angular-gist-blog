@@ -1,10 +1,12 @@
 <section class="post">
-
+  <button ng-click="navBack()">Back to List</button>
   <div>
-    {{post.description}}
     <div ng-repeat="file in post.files">
-      {{file.content}}
+      <markdown>
+        {{file.content}}
+      </markdown>
     </div>
+    <a class="btn btn-primary" href="{{editUrl}}" target="_blank">Edit</a>
   </div>
   
   

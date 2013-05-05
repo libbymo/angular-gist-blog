@@ -21,7 +21,7 @@ GistBlog.controller('ListCtrl', function ListCtrl($scope, $location, $http) {
 	}
 });
 
-GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http) {
+GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http, $location) {
 	// This will have to be a jsonp call to display the 
 	// details of the post in html, so good luck with that.
 	
@@ -40,9 +40,14 @@ GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http) {
 	
 	$http.jsonp( 'https://api.github.com/gists/'+ $routeParams.id + '?callback=JSON_CALLBACK' )
 		.then( function( response ) {
-			console.log(response);
 			$scope.post = response.data.data;
+			console.log( response.data.data );
+			$scope.editUrl = response.data.data.html_url;
 		});
+			
+	$scope.navBack = function() {
+		$location.url('/list');
+	}
 	
 });
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="gistBlog">
     <meta charset="utf-8">
 	
 	<head>
@@ -8,14 +8,15 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	
-	<body ng-app="gistBlog">	
-		<div ng-view></div>
+	<body>	
+		<div class="container" ng-view></div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular-resource.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/showdown.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
 	</body>
