@@ -1,23 +1,17 @@
 GistBlog.controller('ListCtrl', function ListCtrl($scope, $location, $http) {
-	// in the list get the url for the one to display
 	
 	$http({method: 'GET', url: 'https://api.github.com/users/libbymo/gists'})
-	  .success(function(data, status, headers, config) {  // get this into a resource instead of making two calls?
-	    // this callback will be called asynchronously
-	    // when the response is available
-			$scope.posts = data;
-			console.log(data);
-					
+	  .success(function(data, status, headers, config) {
+			$scope.posts = data;					
 	  })
 	  .error(function(data, status, headers, config) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
+			console.log("Something went amiss.");
 	  });
-	
 	
 	$scope.readPost = function(id) {
 		$location.url('/post/'+id);
 	}
+	
 });
 
 GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http, $location) {
@@ -33,11 +27,4 @@ GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http, $
 		$location.url('/list');
 	}
 	
-});
-
-
-GistBlog.controller('NavbarController', function NavbarController($scope, $location) {
-  $scope.routeIs = function(routeName) {
-    return $location.path() === routeName;
-  };
 });
