@@ -1,0 +1,16 @@
+{
+  "name": "GistBlog",
+  "version": "0.0.1",
+  "description": "A Gist Blog. Original angular/node seed from Joe Lepper - so a thank you and credit there.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "libby molina",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~3.2.0",
+    "grunt": "~0.4.1"
+  }
+}

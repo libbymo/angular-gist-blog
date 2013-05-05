@@ -1,0 +1,16 @@
+<section class="list">
+  <h1>Username's blog!</h1>
+  <ul>
+    <li ng-repeat="post in posts">
+      <h3 ng-repeat="file in post.files">{{file.filename}}</h3>  
+      <p>{{post.created_at}}</p>  
+      <p>{{post.description}}</p>
+      <p><a href="" ng-click="readPost({{post.id}})">Read More</a></p>
+    </li>
+  </ul>
+  <!-- iterate through a list - repeat
+  - blog post links to the url to view? 
+  - or passes it somehow fuck. that's a call to the url provided from that initial JSON obj.
+  - in this view? Or on the detail view? or both? 
+  <button>Edit</button> -->
+</section>

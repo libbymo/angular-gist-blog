@@ -1,4 +1,9 @@
-angular-gist-blog
+Angular Gist Blog
 =================
 
-Goal is to create a one page angular app that is a "blog" fed by Gists that are rendered by Markown.
+Display a list of Gists, that are essentially blog posts. From that list, click on a post to see the post in it's entirety.  Allow for reader to edit, by navigating them to the edit portion of the Gist on Github.
+
+Doing this in a single page Angular app.
+
+npm install
+node app.js
