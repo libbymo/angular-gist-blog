@@ -1,14 +1,21 @@
 <section class="post">
-  <div>
+  <div>    
     <div ng-repeat="file in post.files">
-      <p>{{post.created_at}}</p>  
+      <h3>
+        <span class="created">
+          {{ post.created_at | date:"MM/dd/yyyy" }}
+          <b>{{ post.created_at | date:"@ h:mma" }}</b>
+        </span>
+        {{file.filename}} 
+      </h3>
+      <div class="content">
+        <markdown>
+          {{file.content}}
+        </markdown>
+       <button class="btn" ng-click="navBack()">Back to List</button>
+        <a class="btn btn-info" href="{{editUrl}}" target="_blank">Edit</a>
+      </div>
       
-      <markdown>
-        {{file.content}}
-      </markdown>
-    </div>
-    <button class="btn" ng-click="navBack()">Back to List</button>
-    <a class="btn btn-primary" href="{{editUrl}}" target="_blank">Edit</a>
   </div>
   
   

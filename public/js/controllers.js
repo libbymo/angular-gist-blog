@@ -14,7 +14,6 @@ GistBlog.controller('ListCtrl', function ListCtrl($scope, $location, $http) {
 	    // or server returns response with an error status.
 	  });
 	
-	console.log($scope.posts);
 	
 	$scope.readPost = function(id) {
 		$location.url('/post/'+id);
@@ -22,19 +21,6 @@ GistBlog.controller('ListCtrl', function ListCtrl($scope, $location, $http) {
 });
 
 GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http, $location) {
-	// This will have to be a jsonp call to display the 
-	// details of the post in html, so good luck with that.
-	
-	// var url = 'https://api.github.com/gists/' + $routeParams.id;  //5518980
-	
-	// $resource( url,
-	//   {
-	//     callback: 'JSON_CALLBACK'
-	//   }, { get:{ method:'JSONP', isArray: true }})
-	// .then( function(response) {  // then doesn't work. so figure that out if making a resource/factory
-	// 	 $scope.post = response.data;
-	// });
-	
 	
 	$http.jsonp( 'https://api.github.com/gists/'+ $routeParams.id + '?callback=JSON_CALLBACK' )
 		.then( function( response ) {
