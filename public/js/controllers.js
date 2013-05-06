@@ -5,7 +5,7 @@ GistBlog.controller('ListCtrl', function ListCtrl($scope, $location, $http) {
 			$scope.posts = data;					
 	  })
 	  .error(function(data, status, headers, config) {
-			console.log("Something went amiss.");
+			$scope.error("Something went amiss.");
 	  });
 	
 	$scope.readPost = function(id) {
@@ -19,7 +19,6 @@ GistBlog.controller('PostCtrl', function ListCtrl($scope, $routeParams, $http, $
 	$http.jsonp( 'https://api.github.com/gists/'+ $routeParams.id + '?callback=JSON_CALLBACK' )
 		.then( function( response ) {
 			$scope.post = response.data.data;
-			console.log( response.data.data );
 			$scope.editUrl = response.data.data.html_url;
 		});
 			

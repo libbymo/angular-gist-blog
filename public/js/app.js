@@ -14,16 +14,7 @@ var GistBlog = angular.module('gistBlog', ['ngResource'])
 			.otherwise({ redirectTo: '/' })
 		})
 		.directive('markdown', function() {
-			// var converter = new Showdown.converter();
-			// 
-			// return {
-			// 	restrict: 'E',
-			// 	link: function(scope, element, attrs) {
-			// 		var htmlText = converter.makeHtml(scope.file.content);
-			// 		element.html(htmlText);					
-			// 	}
-			// }
-			// 		
+				
 			marked.setOptions({
 			  gfm: true,
 			});
