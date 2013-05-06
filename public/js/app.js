@@ -1,6 +1,7 @@
 'use strict';
 
-var GistBlog = angular.module('gistBlog', ['ngResource'])
+var GistBlog = angular.module('gistBlog', [])
+
 	.config(function($routeProvider) {
 	  $routeProvider
 			.when('/', {
@@ -13,8 +14,8 @@ var GistBlog = angular.module('gistBlog', ['ngResource'])
 			})
 			.otherwise({ redirectTo: '/' })
 		})
+		
 		.directive('markdown', function() {
-				
 			marked.setOptions({
 			  gfm: true,
 			});
@@ -25,9 +26,7 @@ var GistBlog = angular.module('gistBlog', ['ngResource'])
 					var htmlText = marked(scope.file.content);
 					element.html(htmlText);					
 				}
-			}
-			
-			
+			}			
 		});
 
 
